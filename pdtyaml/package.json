@@ -2,7 +2,7 @@
   "name": "pdtyaml",
   "displayName": "PDTYAML",
   "description": "PyDataTask Yaml Parser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "clasm",
   "engines": {
     "vscode": "^1.90.0"
@@ -34,7 +34,8 @@
         "string.quoted.double.yaml": "yaml"
       },
       "tokenTypes": {
-        "string.quoted.double.yaml": "other"
+        "string.quoted.double.yaml": "other",
+        "string.quoted.single.yaml": "other"
       }
     },
       {
