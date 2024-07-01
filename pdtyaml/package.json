@@ -1,0 +1,48 @@
+{
+  "name": "pdtyaml",
+  "displayName": "PDTYAML",
+  "description": "PyDataTask Yaml Parser",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "pdt-yaml",
+      "aliases": ["PDTYAML", "pdt-yaml"],
+      "extensions": [".yaml",".yml"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "pdt-yaml",
+      "scopeName": "source.pdt-yaml",
+      "path": "./syntaxes/pdt-yaml.tmLanguage.json",
+      "embeddedLanguages": {
+        "source.shell": "shell",
+        "source.yaml": "yaml",
+        "source.md": "markdown"
+      }},
+      {
+      "path": "./syntaxes/yaml.injection.json",
+      "scopeName": "yaml.injection",
+      "injectTo": ["source.pdt-yaml"],
+      "embeddedLanguages": {
+        "string.quoted.double.yaml": "yaml"
+      },
+      "tokenTypes": {
+        "string.quoted.double.yaml": "other"
+      }
+    },
+      {
+      "path": "./syntaxes/pdt-yaml.injection.json",
+      "scopeName": "pdt-yaml.injection",
+      "injectTo": ["source.pdt-yaml"],
+      "embeddedLanguages": {
+        "source.shell": "shell"
+      }
+    }]
+  }
+}

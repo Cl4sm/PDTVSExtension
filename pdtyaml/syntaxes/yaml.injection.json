@@ -1,0 +1,51 @@
+{
+    "scopeName": "yaml.injection",
+    "injectionSelector": "L:string.quoted.double.yaml",
+    "patterns": [
+      {
+        "include": "#variable-string-templating"
+      }
+    ],
+    "repository": {
+		"variable-string-templating": {
+			"begin": "(\\{\\{)",
+			"beginCaptures": {
+			  "0": {
+				"name": "punctuation.definition.variable.begin.yaml"
+			  }
+			},
+			"end": "(\\}\\})",
+			"endCaptures": {
+			  "0": {
+				"name": "punctuation.definition.variable.begin.yaml"
+			  }
+			},
+			"patterns": [
+				{
+					"match": "\\s*((\\w+)(?:\\.(\\w+))?(?:\\.(\\w+))?)\\s*(\\|)*\\s*(shquote)*\\s*",
+					"captures": {
+					  "1": {
+						"name": "entity.name.type.enum"
+					  },
+					  "2": {
+						"name": "entity.name.type.enum"
+					  },
+					  "3": {
+						"name": "variable.other.templating.part2.yaml"
+					  },
+					  "4": {
+						"name": "variable.other.templating.part3.yaml"
+					  },
+					  "5": {
+						"name": "punctuation.separator.templating.yaml"
+					  },
+					  "6": {
+						"name": "keyword.control.templating.yaml"
+					  }
+					}
+				  }
+
+			]
+		}
+    }
+}
